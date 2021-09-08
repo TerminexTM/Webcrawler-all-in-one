@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-nfgs$h%px*=d&82^e$%m&d-vk=rg!ulkf@r=&l@r2uy!!v!#tr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'webspiderproject.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost', 'polar-fjord-48149.herokuapp.com']
 
 
 # Application definition
