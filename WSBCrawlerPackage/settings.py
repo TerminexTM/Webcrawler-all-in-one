@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['localhost', 'webspiderproject.herokuapp.com/']
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'stocks.apps.StocksConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,11 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'herokuapp',
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -80,8 +81,11 @@ WSGI_APPLICATION = 'WSBCrawlerPackage.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'stocks_api',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'localhost'
     }
 }
 db_from_env = dj_database_url.config(conn_max_age=600)
